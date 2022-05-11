@@ -1,0 +1,14 @@
+FROM node:latest
+
+WORKDIR /app
+
+ENV PORT=8080
+ENV HOST="127.0.0.1"
+
+COPY package*.json ./
+
+RUN npm install
+
+COPY . .
+
+CMD npm run server
